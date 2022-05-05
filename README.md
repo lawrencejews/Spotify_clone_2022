@@ -22,3 +22,8 @@ pick the `URI` for the `.env` file.
 ```
 - The command for seeding `npx prisma db seed `
 - Prisma studio can display your database in the browser with `npx prisma studio` command to view and edit data.
+- Authentication with next.js importing prisma from a file accessed globally.
+- Api folder contains the `sign-in and sign-up pages` for authentication. 
+- Httpie is a tool to check if your POST requests are working through `Encryption, jwt and setting up a cookie` for the header.
+[https://httpie.io](https://httpie.io)
+- 
