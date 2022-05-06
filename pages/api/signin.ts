@@ -25,7 +25,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       { expiresIn: "8h" }
     );
     res.setHeader(
-      "Set-Cookir",
+      "Set-Cookie",
       cookie.serialize("LUBS_ACCESS_TOKEN", token, {
         httpOnly: true,
         maxAge: 8 * 60 * 60,

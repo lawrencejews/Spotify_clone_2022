@@ -17,6 +17,7 @@ import {
   MdPlaylistAdd,
   MdFavorite,
 } from "react-icons/md";
+import { usePlaylist } from "../lib/hooks";
 
 // Data mapping for listItems then routing
 const navMenu = [
@@ -28,12 +29,12 @@ const navMenu = [
   {
     name: "Search",
     icon: MdSearch,
-    route: "./search",
+    route: "/search",
   },
   {
     name: "Your Library",
     icon: MdLibraryMusic,
-    route: "./library",
+    route: "/library",
   },
 ];
 
@@ -44,20 +45,16 @@ const musicMenu = [
     route: "/",
   },
   {
-    name: "Search",
-    icon: MdSearch,
-    route: "./search",
-  },
-  {
     name: "Favorites",
     icon: MdFavorite,
-    route: "./favorite",
+    route: "/favorite",
   },
 ];
 
-const playlists = new Array(30).fill(1).map((_, i) => `Playlist ${i + 1}`);
+// const playlists = new Array(30).fill(1).map((_, i) => `Playlist ${i + 1}`);
 
 const Siderbar = () => {
+  const { playlists } = usePlaylist();
   return (
     <Box
       width="100%"
@@ -106,10 +103,10 @@ const Siderbar = () => {
         <Box height="66%" overflowY="auto" paddingY="20px">
           <List spacing={2}>
             {playlists.map((playlist) => (
-              <ListItem paddingX="20px" key={playlist}>
+              <ListItem paddingX="20px" key={playlist.id}>
                 <LinkBox>
                   <NextLink href="/" passHref>
-                    <LinkOverlay>{playlist}</LinkOverlay>
+                    <LinkOverlay>{playlist.name}</LinkOverlay>
                   </NextLink>
                 </LinkBox>
               </ListItem>
