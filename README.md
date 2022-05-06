@@ -27,4 +27,7 @@ pick the `URI` for the `.env` file.
 - Httpie is a tool to check if your POST requests are working through `Encryption, jwt and setting up a cookie` for the header.
 [https://httpie.io](https://httpie.io)
 - Handle data fetching `useSWRConfig ` from `swr` locally. This refreshes the cache and the list is called once.
+[https://swr.vercel.app/](https://swr.vercel.app/)
 - Middleware underscore prevent a new route formation for the file. This handles all edge requests coming in the require authentication.
+- Using superjson for next has two steps: first install `npm install babel-plugin-superjson-next` then install `npm install superjson`.
+- 
