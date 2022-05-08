@@ -28,3 +28,9 @@ export const validateRoute = (handler) => {
     res.json({ error: "Not authorized" });
   };
 };
+
+// Check for verification for a user playlist
+export const validateToken = (token) => {
+  const user = jwt.verify(token, "hello");
+  return user;
+};
