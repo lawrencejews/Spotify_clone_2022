@@ -1,6 +1,8 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { StoreProvider } from "easy-peasy";
 import PlayerLayout from "../components/playerLayout";
 import "reset-css"; // browser version selection.
+import { store } from "../lib/store";
 
 const theme = extendTheme({
   colors: {
@@ -31,16 +33,19 @@ const theme = extendTheme({
   },
 });
 
+// StoreProvider maintains state
 const MyApp = ({ Component, pageProps }) => {
   return (
     <ChakraProvider theme={theme}>
-      {Component.authPage ? ( // Conditional log to avoid layout breaking when reloading coz of caching.
-        <Component {...pageProps} />
-      ) : (
-        <PlayerLayout>
+      <StoreProvider store={store}>
+        {Component.authPage ? ( // Conditional log to avoid layout breaking when reloading coz of caching.
           <Component {...pageProps} />
-        </PlayerLayout>
-      )}
+        ) : (
+          <PlayerLayout>
+            <Component {...pageProps} />
+          </PlayerLayout>
+        )}
+      </StoreProvider>
     </ChakraProvider>
   );
 };

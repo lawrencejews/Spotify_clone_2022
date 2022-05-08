@@ -31,3 +31,5 @@ pick the `URI` for the `.env` file.
 - Middleware underscore prevent a new route formation for the file. This handles all edge requests coming in the require authentication.
 - Using superjson for next has two steps: first install `npm install babel-plugin-superjson-next` then install `npm install superjson`.
 - Set-Up a dynamic route for the links `[id].tsx` within nextJS.
+- Creating a global state for the bar handler with the store file.
+- Interface for Audio in Javascript that control sound in the browser `react-howler ` 
