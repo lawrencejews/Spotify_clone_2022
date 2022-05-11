@@ -35,7 +35,7 @@ pick the `URI` for the `.env` file.
 - Interface for Audio in Javascript that control sound in the browser `react-howler ` 
 - Deployment on vercel build command `npx prisma generate && npx prisma migrate deploy && next build`.
 - Add Environment variables `DATABASE_URL && SHADOW_DATABASE_URL`.
-- Override typescript and ESlint when deploying
+- Add to `next.config.js` to override typescript and ESlint when deploying
 ```
 module.exports = {
   eslint: {
@@ -44,7 +44,8 @@ module.exports = {
     ignoreDuringBuilds: true,
   },
 }
-``` and 
+``` 
+and 
 ```
 module.exports = {
   typescript: {
