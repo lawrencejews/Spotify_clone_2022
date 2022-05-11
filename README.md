@@ -33,3 +33,27 @@ pick the `URI` for the `.env` file.
 - Set-Up a dynamic route for the links `[id].tsx` within nextJS.
 - Creating a global state for the bar handler with the store file.
 - Interface for Audio in Javascript that control sound in the browser `react-howler ` 
+- Deployment on vercel build command `npx prisma generate && npx prisma migrate deploy && next build`.
+- Add Environment variables `DATABASE_URL && SHADOW_DATABASE_URL`.
+- Override typescript and ESlint when deploying
+```
+module.exports = {
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
+}
+``` and 
+```
+module.exports = {
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
+}  
+```
+
