@@ -5,7 +5,6 @@ import {
   List,
   ListItem,
   ListIcon,
-  Center,
   Divider,
   LinkOverlay,
   LinkBox,
